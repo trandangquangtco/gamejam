@@ -15,50 +15,82 @@
   </div>
 </template>
 
-<style lang="scss">
-.games {
-  margin-top: 40px;
-}
-.games-list {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  .game-item {
-    img {
-      width: 100%;
-      height: 320px;
-      border-radius: 30px;
-      padding: 0;
-    }
-    border-radius: 30px;
-    width: 400px;
-    height: 500px;
-    background: #6c757d;
-    .overtext {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-    .descript {
-      height: 72px;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-    .info {
-      padding: 10px;
-    }
+<style lang="scss" scoped>
+  .games {
+    margin-bottom: 80px;
   }
-  button {
-    float: right;
-    margin-top: 20px;
-    background: none;
+  h4 {
     color: white;
-    border: 1px solid white;
-    border-radius: 20px;
   }
-}
+  .games-list {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    .game-item {
+      img {
+        width: 100%;
+        height: 320px;
+        border-radius: 30px;
+        padding: 0;
+      }
+      border-radius: 30px;
+      width: 400px;
+      background: #6c757d;
+      .overtext {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .descript {
+        height: 72px;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      .info {
+        padding: 10px;
+      }
+    }
+  }
+  @media screen and (max-width: 1300px) {
+    .games-list {
+      .game-item {
+        width: 30%;
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    h3 {
+      font-size: 40px;
+    }
+    p, span {
+      font-size: 32px;
+    }
+    .games-list {
+      display: unset;
+      .game-item {
+        width: 100%;
+        margin-bottom: 32px;
+        .descript {
+          -webkit-line-clamp: 1;
+          height: unset;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 767px) {
+    h3 {
+      font-size: unset;
+    }
+    p, span {
+      font-size: unset;
+    }
+    .games-list .game-item .descript {
+      height: unset;
+      -webkit-line-clamp: 1;
+    }
+  }
 </style>
 
 <script>

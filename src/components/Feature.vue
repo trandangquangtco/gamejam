@@ -19,7 +19,17 @@
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
+  span {
+    color: white;
+    margin-right: 5%;
+  }
+  h4 {
+    color: white;
+  }
+  .feature {
+    margin-bottom: 60px;
+  }
   .feature-list {
     width: 100%;
     display: flex;
@@ -38,17 +48,38 @@
       }
       border-radius: 30px;
       width: 400px;
-      height: 380px;
       background: #6c757d;
     }
   }
-  button {
-    float: right;
-    margin-top: 20px;
-    background: none;
-    color: white;
-    border: 1px solid white;
-    border-radius: 20px;
+  @media screen and (max-width: 1300px) {
+    .feature-list {
+      .feature-item {
+        width: 30%;
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    h3 {
+      font-size: 40px;
+    }
+    p, span {
+      font-size: 32px;
+    }
+    .feature-list {
+      display: unset;
+      .feature-item {
+        width: 100%;
+        margin-bottom: 32px;
+      }
+    }
+  }
+  @media screen and (max-width: 767px) {
+    h3 {
+      font-size: unset;
+    }
+    p, span {
+      font-size: unset;
+    }
   }
 </style>
 

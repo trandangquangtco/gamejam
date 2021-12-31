@@ -11,14 +11,22 @@
     </div>
     <slide-banner />
     <feature />
-    <games/>
+    <games />
   </div>
 </template>
 
 <style lang="scss">
 .home {
   background: #1E1F35;
-  height: 100%;
+  overflow: hidden;
+}
+button {
+  float: right;
+  margin-top: 20px;
+  background: none;
+  color: white;
+  border: 1px solid white;
+  border-radius: 20px;
 }
 .top-bar {
   h1, h5 {

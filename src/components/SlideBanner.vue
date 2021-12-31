@@ -83,6 +83,7 @@
   .slide-banner {
     width: 100%;
     height: 400px;
+    margin-bottom: 40px;
     #hosted {
       color: purple;
     }
