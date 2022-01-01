@@ -6,10 +6,11 @@
         <img :src="item.thumbnailImageUrl" alt="thumbnail">
         <div class="info">
           <h3>{{item.name}}</h3>
-          <p class="hosted">Hosted by {{item.hostProfiles[0].username}}</p>
-          <p>Start in {{item.startTime}}</p>
-          <progress id="file" value="32" max="100"> 32% </progress>
-          <br/>
+          <h5 class="hosted">Hosted by {{item.hostProfiles[0].username}}</h5>
+          <p style="margin-bottom: 8px">Start in {{item.startTime | formatDate}}</p>
+          <div class="myprogress">
+            <div class="bar" :style="{width:barWidth}"></div>
+          </div>
           <span>{{item.joinedCount}} Joined</span>
           <span>{{item.submissionCount}} Submissions</span>
         </div>
@@ -20,12 +21,23 @@
 </template>
 
 <style lang="scss" scoped>
-  span {
+  p, span {
     color: white;
     margin-right: 5%;
+    font-style: italic;
   }
   h4 {
     color: white;
+  }
+  .myprogress {
+    width: 100%;
+    background: #ddd;
+    border-radius: 20px;
+    .bar {
+      height: 20px;
+      border-radius: 20px;
+      background: purple;
+    }
   }
   .feature {
     margin-bottom: 60px;
@@ -89,7 +101,8 @@ export default {
   name: "Feature",
   data() {
     return {
-      feature: jamData.jams
+      feature: jamData.jams,
+      width: 40,
     }
   },
   computed: {
@@ -97,6 +110,9 @@ export default {
       get () {
         return this.feature.slice(0, 3)
       }
+    },
+    barWidth() {
+      return `${this.width + 20}%`
     }
   },
   mounted() {

@@ -36,6 +36,7 @@
                     <p>Submissions</p>
                   </div>
                 </div>
+                <div class="join-now"><button>JOIN NOW</button></div>
               </div>
             </div>
           </div>
@@ -103,10 +104,19 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      background: gray;
       .clock {
         display: flex;
         justify-content: space-between;
         align-items: center;
+      }
+      .join-now {
+        text-align: center;
+      }
+      button {
+        margin: 0 auto;
+        float: unset;
+        background: purple;
       }
     }
   }

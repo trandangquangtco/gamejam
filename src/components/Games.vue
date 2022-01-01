@@ -5,7 +5,10 @@
       <div class="game-item" v-for="(item, i) in games" :key="i">
         <img :src="item.thumbnailImageUrl || 'https://picsum.photos/600/300'" alt="thumbnail">
         <div class="info">
-          <h3 class="overtext">{{item.name}}</h3>
+          <div class="title">
+            <h3 class="overtext">{{item.name}}</h3>
+            <span class="price">3.99$</span>
+          </div>
           <p>#Action</p>
           <p class="descript">{{item.description || "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas quam animi, perferendis, quisquam nobis natus, dolorum suscipit nemo velit possimus perspiciatis nisi hic repellat ipsam esse sed temporibus illum cupiditate dignissimos? Unde labore earum sint autem, dignissimos maiores eaque nostrum quia necessitatibus id odit aspernatur tempora voluptatibus libero corporis aperiam eius nam? Numquam quae modi quidem consectetur iure perferendis delectus dolorum est maxime omnis quisquam id debitis nihil iste, natus quaerat? Enim illum explicabo sed deserunt repudiandae expedita impedit quis itaque a molestias, adipisci corrupti et sapiente, dolorum illo amet excepturi cumque vero consequatur."}}</p>
         </div>
@@ -20,6 +23,9 @@
     margin-bottom: 80px;
   }
   h4 {
+    color: white;
+  }
+  p {
     color: white;
   }
   .games-list {
@@ -40,6 +46,7 @@
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+        width: 50%;
       }
       .descript {
         height: 72px;
@@ -50,6 +57,11 @@
       }
       .info {
         padding: 10px;
+        .title {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
       }
     }
   }
